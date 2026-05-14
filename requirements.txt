@@ -1,0 +1,36 @@
+# Dedutto — Requirements
+# Install: pip install -r requirements.txt
+
+# UI
+# ttkbootstrap is optional; Dedutto uses plain ttk with custom theme
+# ttkbootstrap>=1.10.0
+
+# OCR
+pytesseract>=0.3.10
+Pillow>=10.0.0
+PyMuPDF>=1.23.0        # PDF to image (fitz)
+
+# LLM
+openai>=1.30.0         # Used for OpenAI, OpenRouter, Gemini, Groq, DeepSeek, Custom
+anthropic>=0.25.0      # Used for Anthropic Claude
+
+# PDF generation
+reportlab>=4.1.0
+
+# Charts
+matplotlib>=3.8.0
+
+# Encryption
+cryptography>=42.0.0   # For backup encryption (Fernet/PBKDF2)
+
+# SQLCipher (optional — encrypted SQLite)
+# pysqlcipher3>=1.0.3  # Requires libsqlcipher-dev on Linux
+# On Ubuntu: sudo apt-get install libsqlcipher-dev
+# Then: pip install pysqlcipher3
+
+# Drag-and-drop (optional)
+# tkinterdnd2>=0.3.0   # For native drag-and-drop support
+
+# Dev / optional
+# black>=24.0.0
+# flake8>=7.0.0
