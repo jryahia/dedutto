@@ -130,7 +130,7 @@ class Database:
         if _SQLCIPHER_AVAILABLE and self.password:
             self._conn = sqlcipher.connect(str(self.db_path))
             # Key must be set immediately after opening
-            self._conn.execute(f"PRAGMA key='{self.password}'")
+            self._conn.execute("PRAGMA key=?", (self.password,))
             try:
                 self._conn.execute("SELECT count(*) FROM sqlite_master")
             except Exception as exc:

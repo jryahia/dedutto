@@ -28,7 +28,7 @@ class Database:
     def connect(self) -> None:
         if HAS_SQLCIPHER and self.password:
             self._conn = sqlcipher.connect(self.db_path)
-            self._conn.execute(f"PRAGMA key='{self.password}'")
+            self._conn.execute("PRAGMA key=?", (self.password,))
             self._conn.execute("PRAGMA cipher_page_size = 4096")
             self._conn.execute("PRAGMA kdf_iter = 256000")
             self._conn.execute("PRAGMA cipher_hmac_algorithm = HMAC_SHA512")
