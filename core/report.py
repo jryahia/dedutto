@@ -374,7 +374,7 @@ class ReportGenerator:
             flowables.append(Spacer(1, 0.3 * cm))
 
         if alerts:
-            flowables.append(Paragraph("⚠ Avvisi Ammortamento", styles["DAlert"]))
+            flowables.append(Paragraph(" Avvisi Ammortamento", styles["DAlert"]))
             for alert in alerts:
                 flowables.append(Paragraph(f"• {alert['message']}", styles["DAlert"]))
 
@@ -396,7 +396,7 @@ class ReportGenerator:
             is_past = dl["deadline_date"] < today
             name = dl["name"]
             if is_past:
-                name = f"✓ {name}"
+                name = f" {name}"
             data.append([name, dl["deadline_date"], dl.get("description", "")[:60]])
 
         table = Table(data, colWidths=[7 * cm, 3 * cm, 7 * cm])

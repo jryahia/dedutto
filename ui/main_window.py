@@ -242,7 +242,7 @@ class MainWindow:
         ttk.Button(toolbar, text=s["btn_classify_all"],
                    command=self._classify_all).pack(side="left", padx=3)
 
-        ttk.Label(toolbar, text="🔍").pack(side="right", padx=(0, 3))
+        ttk.Label(toolbar, text="").pack(side="right", padx=(0, 3))
         self._search_var = tk.StringVar()
         self._search_var.trace_add("write", lambda *a: self._refresh_expense_list())
         ttk.Entry(toolbar, textvariable=self._search_var, width=20).pack(side="right", padx=3)
@@ -586,7 +586,7 @@ class MainWindow:
             for alert in alerts:
                 ttk.Label(
                     self._amort_alert_frame,
-                    text=f"⚠ {alert['message']}",
+                    text=f" {alert['message']}",
                     foreground=theme.WARNING,
                     wraplength=700,
                 ).pack(anchor="w", pady=2)
@@ -611,13 +611,13 @@ class MainWindow:
                 date = dl["deadline_date"]
                 if date < today:
                     tag = "past"
-                    status_str = "✓ Passata"
+                    status_str = " Passata"
                 elif date <= cutoff:
                     tag = "upcoming"
-                    status_str = "⚠ Imminente"
+                    status_str = " Imminente"
                 else:
                     tag = "future"
-                    status_str = "📅 Futura"
+                    status_str = " Futura"
                 self._deadline_tree.insert(
                     "", "end",
                     values=(dl["name"], date, dl.get("description", ""), status_str),

@@ -42,7 +42,7 @@ class DropZone(QWidget):
             }}
         """)
 
-        icon_label = QLabel("📂", self)
+        icon_label = QLabel("", self)
         icon_label.setFont(QFont("Segoe UI", 36))
         icon_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         icon_label.setStyleSheet("border: none; background: transparent;")

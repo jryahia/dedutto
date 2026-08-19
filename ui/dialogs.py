@@ -443,7 +443,7 @@ class SettingsDialog(tk.Toplevel):
         self._timeout_var = tk.StringVar(value="60")
         ttk.Entry(frame, textvariable=self._timeout_var, width=10).grid(row=4, column=1, **pad)
 
-        ttk.Label(frame, text="⚠ La chiave API non viene mai inviata a server terzi.",
+        ttk.Label(frame, text=" La chiave API non viene mai inviata a server terzi.",
                   foreground=theme.WARNING).grid(
             row=5, column=0, columnspan=3, pady=(theme.PAD_MD, 0), sticky="w"
         )

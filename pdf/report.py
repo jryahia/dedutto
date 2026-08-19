@@ -298,7 +298,7 @@ def generate_report(
             amort_list = [a for a in amortizations if a.expense_id == e.id]
             if not amort_list:
                 msg = (
-                    f"⚠ Hai acquistato <b>{e.vendor or 'un bene'}</b> per "
+                    f" Hai acquistato <b>{e.vendor or 'un bene'}</b> per "
                     f"<b>{format_currency(e.amount)}</b> il "
                     f"<b>{e.date_str()}</b> ma non hai avviato l'ammortamento."
                 )
