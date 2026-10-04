@@ -1,4 +1,22 @@
-# Dedutto — Gestione Spese Partita IVA
+# Dedutto
+
+**Privacy-first desktop app that helps Italian freelancers (Partita IVA) classify expenses, track depreciation and prepare reports for their accountant.**
+
+![Python](https://img.shields.io/badge/Python-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Flet](https://img.shields.io/badge/Flet-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![Tesseract OCR](https://img.shields.io/badge/Tesseract%20OCR-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![SQLCipher](https://img.shields.io/badge/SQLCipher-161b22?style=for-the-badge&labelColor=161b22&color=161b22) ![OpenAI / Claude / Groq](https://img.shields.io/badge/OpenAI%20/%20Claude%20/%20Groq-161b22?style=for-the-badge&labelColor=161b22&color=161b22)
+
+```mermaid
+flowchart LR
+    S0["Receipts + invoices (PDF / image)"]
+    S1["Tesseract OCR"]
+    S2["LLM deductibility classification"]
+    S3["Depreciation + deadlines"]
+    S4["PDF report for accountant"]
+    S0 --> S1 --> S2 --> S3 --> S4
+```
+
+## Problem it solves
+
+Italian freelancers struggle to know which expenses are deductible and by how much, and do not want financial data in the cloud. Dedutto runs OCR and classification locally (any LLM provider) and keeps all data on the device with encrypted backups.
 
 **Applicazione desktop privacy-first per liberi professionisti italiani con Partita IVA.**
 
